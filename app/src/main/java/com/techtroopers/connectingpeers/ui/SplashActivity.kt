@@ -2,6 +2,7 @@ package com.techtroopers.connectingpeers.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -16,8 +17,9 @@ class SplashActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashBinding
     private val viewModel: MyCourseViewModel by viewModels()
+    val SPLASH_DELAY: Long = 2000 // 2 seconds
 
-    private val SPLASH_DURATION = 2000
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
@@ -33,6 +35,11 @@ class SplashActivity : AppCompatActivity() {
         moveToNextScreen()
     }
     private fun moveToNextScreen(){
-        startActivity(Intent(this,CourseActivity::class.java))
+        Handler().postDelayed({
+            // Start the MainActivity
+            val mainIntent = Intent(this, CourseActivity::class.java)
+            startActivity(mainIntent)
+            finish()
+        }, SPLASH_DELAY)
     }
 }

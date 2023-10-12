@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white">
@@ -37,91 +39,37 @@
             android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>
-    <!-- CardView -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="0dp"
-        android:layout_marginTop="20dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
         android:padding="10dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+            <ImageView
+                android:id="@+id/ic_thumbnail"
+                android:layout_width="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:cropToPadding="true"
+                android:scaleType="fitXY"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="400dp"
+                android:src="@drawable/screenshot">
+            </ImageView>
+        <Button
+            android:id="@+id/bv_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ic_thumbnail"
             android:layout_width="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/tv_Line_By_Line"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/label_ncert_lin_by_lin"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"></TextView>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginEnd="40dp"
-                android:src="@drawable/ic_left_arrow"
-                android:visibility="invisible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tv_Line_By_Line"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/cardImageView"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/course_thumbnail"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_Line_By_Line" />
-
-            <TextView
-                android:id="@+id/tv_Batch_Name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/label_yakeen_yt"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardImageView"></TextView>
-
-            <TextView
-                android:id="@+id/tv_start_End_Date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/label_start_and_end_date"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_Batch_Name"></TextView>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginEnd="30dp"
-                android:layout_marginStart="30dp"
-                android:textStyle="bold"
-                android:background="@color/navy_blue"
-                android:text="@string/label_enrolled_now"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"
-                app:layout_constraintTop_toBottomOf="@+id/tv_start_End_Date">
-            </androidx.appcompat.widget.AppCompatButton>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="Enroll Now"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_background" />
 
 
-    </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
