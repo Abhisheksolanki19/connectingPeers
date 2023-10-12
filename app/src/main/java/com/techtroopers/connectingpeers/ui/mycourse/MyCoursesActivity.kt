@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.techtroopers.connectingpeers.databinding.ActivityMyCourseBinding
+import com.techtroopers.connectingpeers.ui.chat.ChatActivity
 import com.techtroopers.connectingpeers.ui.coursedetail.CourseDetailActivity
 
 class MyCoursesActivity : AppCompatActivity() {
