@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ConnectingPeers</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="label_course_detail">Course Detail fragment</string>
 </resources>
