@@ -19,12 +19,12 @@ object AppModule {
     @Singleton
     fun provideNetworkService(): NetworkService {
         return Networking.create(
-            "https://test.com",
+            "http://172.18.8.120:3000/",
         )
     }
 
     @Provides
     @Singleton
     fun provideSharedPreferences(application: Application): SharedPreferences =
-        application.getSharedPreferences("shelfApp-prefs", Context.MODE_PRIVATE)
+        application.getSharedPreferences("connectingPeers-prefs", Context.MODE_PRIVATE)
 }

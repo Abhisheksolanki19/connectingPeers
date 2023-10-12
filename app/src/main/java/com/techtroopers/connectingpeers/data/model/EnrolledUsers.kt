@@ -8,9 +8,5 @@ import kotlinx.android.parcel.Parcelize
  */
 @Parcelize
 data class EnrolledUsers(
-    val userName: String,
-
-    val userPassword: String,
-
-    val country: String
+    val message: String
 ) : Parcelable
