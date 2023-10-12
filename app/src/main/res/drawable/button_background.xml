@@ -1,0 +1,5 @@
+<!-- rounded_blue_button.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#2196F3" /> <!-- Blue color (you can change this color) -->
+    <corners android:radius="8dp" /> <!-- Adjust the radius for rounded corners -->
+</shape>

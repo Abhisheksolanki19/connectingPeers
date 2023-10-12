@@ -2,4 +2,17 @@
     <string name="app_name">ConnectingPeers</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="label_course_detail">Course Detail fragment</string>
+    <string name="title_activity_course">CourseActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="label_my_courses">My Courses</string>
+    <string name="label_ncert_lin_by_lin">NCERT line by line (YAKEEN YT)</string>
+    <string name="label_yakeen_yt">Yakeen YT</string>
+    <string name="label_start_and_end_date"> Starts on 09 Oct 2023 to 10 Apr 2024</string>
+    <string name="label_enrolled_now">Enrolled Now</string>
+
+
 </resources>
