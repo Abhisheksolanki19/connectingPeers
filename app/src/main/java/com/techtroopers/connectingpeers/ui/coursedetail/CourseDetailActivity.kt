@@ -38,9 +38,6 @@ class CourseDetailActivity : AppCompatActivity() {
     }
 
     private fun setupObservers(){
-        viewModel.enrolledUsersList.observe(this, Observer {
-            Toast.makeText(this,it.message, Toast.LENGTH_SHORT).show()
-        })
     }
 
     private fun setupClickListeners(){

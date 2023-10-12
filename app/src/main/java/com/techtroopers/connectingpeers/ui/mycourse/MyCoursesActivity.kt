@@ -18,7 +18,11 @@ class MyCoursesActivity : AppCompatActivity() {
     }
 
     private fun setUpClick() {
-        binding.bvButton.setOnClickListener {
+        binding.btnEnrollOne.setOnClickListener {
+            startActivity(Intent(this,CourseDetailActivity::class.java))
+        }
+
+        binding.btnEnrollSecond.setOnClickListener {
             startActivity(Intent(this,CourseDetailActivity::class.java))
         }
 

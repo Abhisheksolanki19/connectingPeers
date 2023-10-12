@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.techtroopers.connectingpeers.comm.Section
+import com.techtroopers.connectingpeers.ui.coursedetail.adapter.coursedetail.CourseDetailFragment
 
 class CourseDetailViewPagerAdapter(
     fragmentActivity: FragmentActivity,
