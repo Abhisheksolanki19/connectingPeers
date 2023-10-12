@@ -21,12 +21,10 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
         moveToNextScreen()
-        startActivity(Intent(this, CourseDetailActivity::class.java))
     }
 
     private fun moveToNextScreen() {
         Handler().postDelayed({
-            // Start the MainActivity
             val mainIntent = Intent(this, MyCoursesActivity::class.java)
             startActivity(mainIntent)
             finish()
