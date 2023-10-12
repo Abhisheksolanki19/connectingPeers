@@ -13,6 +13,8 @@
     <string name="label_yakeen_yt">Yakeen YT</string>
     <string name="label_start_and_end_date"> Starts on 09 Oct 2023 to 10 Apr 2024</string>
     <string name="label_enrolled_now">Enrolled Now</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

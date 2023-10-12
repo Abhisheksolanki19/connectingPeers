@@ -1,12 +1,9 @@
 package com.techtroopers.connectingpeers.ui.mycourse
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.techtroopers.connectingpeers.databinding.ActivityMyCourseBinding
-import com.techtroopers.connectingpeers.ui.chat.ChatActivity
-import com.techtroopers.connectingpeers.ui.coursedetail.CourseDetailActivity
+import com.techtroopers.connectingpeers.ui.fragement.UserInputDialogBox
 
 class MyCoursesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMyCourseBinding
@@ -20,7 +17,8 @@ class MyCoursesActivity : AppCompatActivity() {
 
     private fun setUpClick() {
         binding.bvButton.setOnClickListener {
-            startActivity(Intent(this,CourseDetailActivity::class.java))
+            val bottomSheetFragment = UserInputDialogBox()
+            bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
         }
 
     }
