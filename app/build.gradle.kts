@@ -47,6 +47,8 @@ android {
 
 dependencies {
 
+    implementation ("com.google.android.material:material:1.10.0")
+
     // ViewModel Compose
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
 

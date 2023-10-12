@@ -21,10 +21,10 @@
 
         <ImageView
             android:id="@+id/iv_Back_Button"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
             android:layout_gravity="start"
-            android:src="@drawable/ic_left_arrow" />
+            android:src="@drawable/ic_arrow_left" />
 
         <TextView
             android:id="@+id/tv_Screen_Name"
@@ -46,43 +46,42 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutManager="LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@id/messageInput"
+        app:layout_constraintBottom_toTopOf="@id/outlinedTextFieldMessage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:reverseLayout="false"
         app:stackFromEnd="true" />
 
-    <!-- Message input area -->
-    <LinearLayout
-        android:id="@+id/messageInput"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/outlinedTextFieldMessage"
+        style="@style/TextInputLayoutStyle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/blue_500"
-        android:orientation="horizontal"
-        android:padding="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Message"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivSendMessage"
         app:layout_constraintStart_toStartOf="parent">
 
-        <!-- Text input field -->
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Type a message"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
-        <!-- Send button -->
-        <Button
-            android:id="@+id/sendButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Send"
-            android:background="@drawable/button_background"
-            android:textColor="@color/black"
-            android:textSize="16sp" />
-    </LinearLayout>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivSendMessage"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/outlinedTextFieldMessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/outlinedTextFieldMessage"
+        app:layout_constraintTop_toTopOf="@+id/outlinedTextFieldMessage"
+        app:srcCompat="@drawable/ic_send_message" />
 </androidx.constraintlayout.widget.ConstraintLayout>

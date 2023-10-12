@@ -1,5 +1,6 @@
 package com.techtroopers.connectingpeers.ui.coursedetail.adapter.coursedetail
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,10 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.techtroopers.connectingpeers.comm.Section
 import com.techtroopers.connectingpeers.data.model.EnrolledUsers
 import com.techtroopers.connectingpeers.databinding.FragmentCourseDetailBinding
+import com.techtroopers.connectingpeers.ui.chat.ChatActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CourseDetailFragment : Fragment() {
+class CourseDetailFragment : Fragment(), EnrolledUsersAdapter.OnItemClickListener {
 
     companion object {
 
@@ -47,13 +49,13 @@ class CourseDetailFragment : Fragment() {
         binding = FragmentCourseDetailBinding.inflate(layoutInflater)
 
         val enrolledUsersList: ArrayList<EnrolledUsers> = ArrayList()
-        enrolledUsersList.add(EnrolledUsers("1","Abhishek"))
-        enrolledUsersList.add(EnrolledUsers("1","Abhishek"))
-        enrolledUsersList.add(EnrolledUsers("1","Abhishek"))
-        enrolledUsersList.add(EnrolledUsers("1","Abhishek"))
-        enrolledUsersList.add(EnrolledUsers("1","Abhishek"))
+        enrolledUsersList.add(EnrolledUsers("1", "Abhishek"))
+        enrolledUsersList.add(EnrolledUsers("1", "Abhishek"))
+        enrolledUsersList.add(EnrolledUsers("1", "Abhishek"))
+        enrolledUsersList.add(EnrolledUsers("1", "Abhishek"))
+        enrolledUsersList.add(EnrolledUsers("1", "Abhishek"))
 
-        if(section.name == "Peers"){
+        if (section.name == "Peers") {
             setupRecyclerView(enrolledUsersList + enrolledUsersList + enrolledUsersList + enrolledUsersList)
         } else {
             binding.tvFragmentName.isVisible = true
@@ -64,10 +66,14 @@ class CourseDetailFragment : Fragment() {
 
     private fun setupRecyclerView(dataList: List<EnrolledUsers>) {
         binding.rvUsers.run {
-            enrolledUsersAdapter = EnrolledUsersAdapter(dataList)
+            enrolledUsersAdapter = EnrolledUsersAdapter(dataList, this@CourseDetailFragment)
             adapter = enrolledUsersAdapter
             layoutManager = LinearLayoutManager(requireContext())
         }
         binding.rvUsers.isVisible = true
+    }
+
+    override fun onItemClick(item: EnrolledUsers) {
+        startActivity(Intent(requireActivity(), ChatActivity::class.java))
     }
 }
