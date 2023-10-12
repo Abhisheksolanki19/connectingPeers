@@ -1,8 +1,8 @@
-package com.abhishek.shelfapp.utils.network
+package com.techtroopers.connectingpeers.utils.network
 
 import android.content.Context
 import androidx.annotation.RawRes
-import com.abhishek.shelfapp.R
+import com.techtroopers.connectingpeers.R
 import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.Protocol

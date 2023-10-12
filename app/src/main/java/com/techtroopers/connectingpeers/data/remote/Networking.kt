@@ -1,6 +1,6 @@
 package com.techtroopers.connectingpeers.data.remote
 
-import com.abhishek.shelfapp.utils.network.FakeAPIInterceptor
+import com.techtroopers.connectingpeers.utils.network.FakeAPIInterceptor
 import com.squareup.moshi.Moshi
 import com.squareup.picasso.BuildConfig
 import com.techtroopers.connectingpeers.ConnectingPeers
