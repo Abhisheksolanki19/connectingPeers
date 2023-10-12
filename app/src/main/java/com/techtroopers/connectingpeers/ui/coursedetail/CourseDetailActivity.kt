@@ -26,6 +26,8 @@ class CourseDetailActivity : AppCompatActivity() {
         binding = ActivityCourseDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupObservers()
+        setupClickListeners()
+
         var sectionList : ArrayList<Section> = ArrayList()
         sectionList.add(Section("Description","Description"))
         sectionList.add(Section("All classes","All classes"))
@@ -36,10 +38,16 @@ class CourseDetailActivity : AppCompatActivity() {
     }
 
     private fun setupObservers(){
-
         viewModel.enrolledUsersList.observe(this, Observer {
             Toast.makeText(this,it.message, Toast.LENGTH_SHORT).show()
         })
+    }
+
+    private fun setupClickListeners(){
+        binding.ivBack.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+            finish()
+        }
     }
 
     private fun setupAppStoreViewPagerAdapter(sections: List<Section>) {
