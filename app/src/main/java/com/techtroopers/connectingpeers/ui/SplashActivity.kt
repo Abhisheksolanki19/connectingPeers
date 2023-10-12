@@ -1,10 +1,10 @@
 package com.techtroopers.connectingpeers.ui
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.fragment.app.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.techtroopers.connectingpeers.R
 import com.techtroopers.connectingpeers.databinding.ActivitySplashBinding
@@ -16,6 +16,8 @@ class SplashActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashBinding
     private val viewModel: MyCourseViewModel by viewModels()
+
+    private val SPLASH_DURATION = 2000
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
@@ -23,9 +25,14 @@ class SplashActivity : AppCompatActivity() {
         setupObservers()
     }
 
-    private fun setupObservers(){
+    private fun setupObservers() {
         viewModel.enrolledUsersList.observe(this, Observer {
-            Toast.makeText(this,it.message, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, it.message, Toast.LENGTH_SHORT).show()
         })
+        setContentView(R.layout.activity_splash)
+        moveToNextScreen()
+    }
+    private fun moveToNextScreen(){
+        startActivity(Intent(this,CourseActivity::class.java))
     }
 }
